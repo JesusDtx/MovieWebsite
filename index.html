@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Popcorn Movie</title>
     <link rel="stylesheet" href="style.css">
+    <script src="table_form_movies.js" defer></script>
 </head>
 <body>
 
@@ -24,66 +25,22 @@
     <!-- Page layout -->
     <div class="page">
 
-        <div class="side-bar"></div>
 
-        <div class="content">
-
-            <div class="movie-row">
-                <div class="movie-image">
-                    <div class="genre">Genre goes here</div>
-                    Place holder movie image
-                </div>
-
-                <div class="movie-info">
-                    General description/info
-                </div>
-
-                <div class="movie-actions">
-                    <div class="showtimes">Showtimes / availability</div>
-                    <button>Purchase tickets</button>
-                </div>
+            <div>
+                <table class="tablespace">
+                    <tr>
+                            <th>Name</th>
+                            <th>Genre</th>
+                            <th>Description</th>
+                            <th>Showtimes</th>
+                    </tr>
+                    <tbody id="movie">
+                    </tbody>
+                </table>
             </div>
-
-            <hr>
-
-            <div class="movie-row">
-                <div class="movie-image">
-                    <div class="genre">Genre goes here</div>
-                    Place holder movie image
-                </div>
-
-                <div class="movie-info">
-                    General description/info
-                </div>
-
-                <div class="movie-actions">
-                    <div class="showtimes">Showtimes / availability</div>
-                    <button>Purchase tickets</button>
-                </div>
+            <div class="button">
+                
             </div>
-
-            <hr>
-
-            <div class="movie-row">
-                <div class="movie-image">
-                    <div class="genre">Genre goes here</div>
-                    Place holder movie image
-                </div>
-
-                <div class="movie-info">
-                    General description/info
-                </div>
-
-                <div class="movie-actions">
-                    <div class="showtimes">Showtimes / availability</div>
-                    <button>Purchase tickets</button>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="side-bar"></div>
-
     </div>
 
 </body>
