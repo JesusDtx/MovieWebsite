@@ -1,0 +1,67 @@
+//This is my 2nd attempt to provide input from HTML to Javascript
+//Gather 5 inputs with button as click event
+//Push the input on a list
+//read each element on the list to the table cell
+
+
+
+const formEL = document.querySelector("form")
+const tbodyEL = document.querySelector("tbody")
+
+
+function addTable(e){
+    e.preventDefault();
+    const name = document.getElementById("name").value
+    const genre = document.getElementById("genre").value
+    const desc = document.getElementById("desc").value
+    const showtime = document.getElementById("showtime").value
+    const stime24 = document.getElementById("Stime").value
+    const etime24 = document.getElementById("Etime").value
+
+    const stime12 = convertTo12Hour(stime24)
+    const etime12 = convertTo12Hour(etime24)
+
+    tbodyEL.innerHTML += `
+    <tr>
+        <td>${name}</td>
+        <td>${genre}</td>
+        <td>${desc}</td>
+        <td>${showtime}</td>
+        <td>${stime12}</td>
+        <td>${etime12}</td>
+        
+        <td><button class="deleteBtn">Delete</button></td>
+    </tr>`
+    formEL.reset(); 
+
+    //alert(name + genre + desc + showtime) 
+}
+
+function delCell(e){
+    if (e.target.classList.contains("deleteBtn")){
+        e.target.closest("tr").remove();
+    }
+}
+
+function convertTo12Hour(time24){
+    if (!time24) return ""
+    let [hours, minutes] = time24.split(":")
+
+    hours = parseInt(hours)
+    minutes = minutes.padStart(2, "0")
+
+    let period = "AM";
+    
+    if (hours >= 12){
+        period = "PM"
+    }
+    hours = hours % 12;
+
+    if (hours == 0){
+        hours = 12;
+    }
+    return `${hours}:${minutes} ${period}`
+}
+
+tbodyEL.addEventListener("click", delCell)
+formEL.addEventListener("submit", addTable)
