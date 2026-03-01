@@ -8,6 +8,7 @@
 const formEL = document.querySelector("form")
 const tbodyEL = document.querySelector("tbody")
 
+
 function addTable(e){
     e.preventDefault();
     const name = document.getElementById("name").value
@@ -25,9 +26,18 @@ function addTable(e){
         <td>${endtime}</td>
         
         <td><button class="deleteBtn">Delete</button></td>
-    </tr`
+    </tr>`
+    formEL.reset(); 
 
     //alert(name + genre + desc + showtime) 
 }
 
+function delCell(e){
+    if (e.target.classList.contains("deleteBtn")){
+        e.target.closest("tr").remove();
+    }
+}
+
+
+tbodyEL.addEventListener("click", delCell)
 formEL.addEventListener("submit", addTable)
