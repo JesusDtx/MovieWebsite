@@ -1,11 +1,8 @@
 # MovieWebsite
 This contains all the files for the movie website
 
-<!--Input/Output Branch-- >
-<!--2/23/2026
-This is a test run on how do I provide input and output on movies list
-I want to address the Scrum back log item: "As a system, I can store movie details"
-Theyre supposed to be stored in Database/repository. But where? Inside the file or somewhere? -->
+This is based on JesusDtx MovieWebsite code that I forked
 
-<!--Using Python (Flask) seemed like a solution to try out first: its a simple, lightweight web application
-with extensions-->
+Currently im doing one backlog of storing movie details with: Title, genre, rating, and description plus show times.
+Must be in the database/repository.
+Im 75% complete as of the time of this writing (3/1/2026)
