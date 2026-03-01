@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Popcorn Movie</title>
     <link rel="stylesheet" href="style.css">
-    <script src="table_form_movies.js" defer></script>
+    <script src="Moviedata_table" defer></script>
 </head>
 <body>
 
@@ -32,16 +32,32 @@
                             <th>Name</th>
                             <th>Genre</th>
                             <th>Description</th>
-                            <th>Showtimes</th>
+                            <th>Showtime Start</th>
+                            <th>Showtime End</th>
                     </tr>
                     <tbody id="movie">
                     </tbody>
                 </table>
             </div>
-            <div class="button">
+            
+    </div>
+<div>
+                <p> Enter the movie you want to add:</p>
+                <form>
+                    <label>Name: </label>
+                    <input type="text" id="name">
+                    <label>Genre: </label>
+                    <input type="text" id="genre">
+                    <label>Description: </label>
+                    <input type="text"id="desc">
+                    <label>Showtime start: </label>
+                    <input type="datetime-local" id="showtime">
+                    <label>Showtime End:</label>
+                    <input type="datetime-local" id="endshowtime">
+                    <button id="submit">Submit </button>
+                    
+                </form>
                 
             </div>
-    </div>
-
 </body>
 </html>

@@ -1,0 +1,33 @@
+//This is my 2nd attempt to provide input from HTML to Javascript
+//Gather 5 inputs with button as click event
+//Push the input on a list
+//read each element on the list to the table cell
+
+
+
+const formEL = document.querySelector("form")
+const tbodyEL = document.querySelector("tbody")
+
+function addTable(e){
+    e.preventDefault();
+    const name = document.getElementById("name").value
+    const genre = document.getElementById("genre").value
+    const desc = document.getElementById("desc").value
+    const showtime = document.getElementById("showtime").value
+    const endtime = document.getElementById("endshowtime").value
+
+    tbodyEL.innerHTML += `
+    <tr>
+        <td>${name}</td>
+        <td>${genre}</td>
+        <td>${desc}</td>
+        <td>${showtime}</td>
+        <td>${endtime}</td>
+        
+        <td><button class="deleteBtn">Delete</button></td>
+    </tr`
+
+    //alert(name + genre + desc + showtime) 
+}
+
+formEL.addEventListener("submit", addTable)
