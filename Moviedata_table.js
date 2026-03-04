@@ -4,29 +4,63 @@
 //read each element on the list to the table cell
 
 
-
 const formEL = document.querySelector("form")
 const tbodyEL = document.querySelector("tbody")
+
+function sendData(n,g, d, s, s1, s2){
+ let data = {name:n,
+    genre:g,
+    desc:d,
+    date: s,
+    start: s1,
+    end: s2
+ }
+ const sendDataString = JSON.stringify(data)
+ localStorage.setItem('id0', sendDataString)
+
+}
+function loadData(){
+    const savedData = localStorage.getItem('id0')
+    if (savedData) {
+        const data = JSON.parse(savedData);
+
+        const tableBody = document.getElementById("insert");
+
+        const row = `
+            <tr>
+                <td>${data.name}</td>
+                <td>${data.genre}</td>
+                <td>${data.desc}</td>
+                <td>${data.date}</td>
+                <td>${data.start}</td>
+                <td>${data.end}</td>
+            </tr>
+        `;
+        tableBody.innerHTML = row;
+    }
+}
 
 
 function addTable(e){
     e.preventDefault();
-    const name = document.getElementById("name").value
-    const genre = document.getElementById("genre").value
-    const desc = document.getElementById("desc").value
-    const showtime = document.getElementById("showtime").value
+    const nameD = document.getElementById("name").value
+    const genreD = document.getElementById("genre").value
+    const descD = document.getElementById("desc").value
+    const showtimeD = document.getElementById("showtime").value
     const stime24 = document.getElementById("Stime").value
     const etime24 = document.getElementById("Etime").value
 
     const stime12 = convertTo12Hour(stime24)
     const etime12 = convertTo12Hour(etime24)
 
+    sendData(nameD, genreD, descD, showtimeD, stime12, etime12)
+
     tbodyEL.innerHTML += `
     <tr>
-        <td>${name}</td>
-        <td>${genre}</td>
-        <td>${desc}</td>
-        <td>${showtime}</td>
+        <td>${nameD}</td>
+        <td>${genreD}</td>
+        <td>${descD}</td>
+        <td>${showtimeD}</td>
         <td>${stime12}</td>
         <td>${etime12}</td>
         
@@ -62,6 +96,6 @@ function convertTo12Hour(time24){
     }
     return `${hours}:${minutes} ${period}`
 }
-
+window.onload = loadData;
 tbodyEL.addEventListener("click", delCell)
 formEL.addEventListener("submit", addTable)

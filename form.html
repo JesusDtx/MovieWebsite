@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Popcorn Movie</title>
     <link rel="stylesheet" href="style.css">
-    <script src="Moviedata_table" defer></script>
+    <script src="Moviedata_table.js" defer></script>
 </head>
 <body>
 
@@ -24,10 +24,8 @@
 
     <!-- Page layout -->
     <div class="page">
-
-
             <div>
-                <table class="tablespace">
+                <table>
                     <tr>
                             <th>Name</th>
                             <th>Genre</th>
@@ -36,11 +34,10 @@
                             <th>Showtime Start</th>
                             <th>Showtime End</th>
                     </tr>
-                    <tbody id="movie">
+                    <tbody id="insert">
                     </tbody>
                 </table>
             </div>
-            
     </div>
 <div>
                 <p> Enter the movie you want to add:</p>
@@ -58,7 +55,6 @@
                     <label>Showtime End:</label>
                     <input type="time" id="Etime">
                     <button id="submit">Submit </button>
-                    
                 </form>
                 
             </div>

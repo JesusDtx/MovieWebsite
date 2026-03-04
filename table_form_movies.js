@@ -1,5 +1,5 @@
 //Self note: This is a messy program I borrowed to understand javascript
-//
+//Unused file
 
 var movieArray = [
         {'name': 'MovieA', 'Genre': 'Action','Description':"Man kills dog and out for revenge", 'Showtimes': 'Monday 5pm- 7pm'},
@@ -7,7 +7,7 @@ var movieArray = [
         {'name': 'MovieC', 'Genre': 'Horror','Description':"Dumb teenagers awaken a secret monster" ,'Showtimes': 'Monday 5pm-7pm'},
     ]
 
-    function buildTable(data){
+    function buildTable(data){ //Get data from a list/dictionary
         var table = document.getElementById("movie")
 
         for( var i = 0; i < data.length; i++){
